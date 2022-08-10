@@ -1,0 +1,38 @@
+.container {
+    padding: 10px;
+    /* box-shadow: 3px 3px 11px 3px rgb(0 0 0 /32%) */
+}
+
+.logo {
+    position: absolute;
+    top: 0;
+    left: 0;
+    margin-left: 7%;
+}
+
+.dot {
+    color: blue;
+    font-size: 32px;
+}
+
+.list {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+}
+
+.item {
+    margin: 0px 16px;
+}
+
+.button {
+    position: absolute;
+    right: 0;
+    margin-right: 2%;
+    padding: 10px 20px;
+    background-color: black;
+    color: white;
+    font-weight: bold;
+    border: 1;
+    border-radius: 10px ;
+}

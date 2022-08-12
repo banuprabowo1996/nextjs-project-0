@@ -24,7 +24,8 @@
   flex: 1;
   padding: 60px;
   margin-right: 6%;
-  font-size: 1vw;
+  font-size: 2vw;
+  margin-top: -2%;
 }
 
 .buttonExplore {
@@ -57,6 +58,11 @@
   flex: 1;
 }
 
+.SidebysideImage {
+  display: flex;
+  flex-direction: row;
+}
+
 .containerThird {
   flex: 1;
   margin-left: 4%;
@@ -84,4 +90,8 @@
 
 .plus {
   color: blue;
+}
+
+.blog {
+  text-align: center;
 }

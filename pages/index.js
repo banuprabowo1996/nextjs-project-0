@@ -1,12 +1,22 @@
-import Head from 'next/head'
 import Image from 'next/image'
-import styles from '../styles/Home.module.css'
-import Header from '../components/header/header'
+import { useEffect, useState } from 'react'
 import Footer from '../components/footer/footer'
+import Header from '../components/header/header'
 import Slider from '../components/slider/slider'
-// import NextJsCarousel from '../components/slider/slider'
+import styles from '../styles/Home.module.css'
 
 export default function Home() {
+
+  const [buildings, setBuildings] = useState()
+
+  console.log(buildings, '<<< dari index');
+
+  useEffect(() => {
+    fetch(' http://localhost:3001/buildings')
+      .then((response) => response.json())
+      .then((data) => setBuildings(data));
+  }, [])
+
   return (
     <>
       <Header />
@@ -26,15 +36,18 @@ export default function Home() {
           </div>
         </div>
         <div className={styles.section}>
-          <Slider />
+          {buildings ? <Slider buildings={buildings} /> : null}
         </div>
         <div className={styles.section}>
           <div className={styles.sectionThird}>
             <div className={styles.collageImage}>
-              <Image src='/build1.jpg' width={600} height={400} />
-              <br />
-              <Image src='/build1.jpg' width={300} height={200} style={{ marginRight: "5px" }} />
-              <Image src='/build1.jpg' width={300} height={200} />
+              <div>
+                <Image src='/build1.jpg' width={600} height={400} />
+              </div>
+              <div className={styles.SidebysideImage}>
+                <Image src='/build2.jpg' width={300} height={200} />
+                <Image src='/build5.jpg' width={300} height={200} />
+              </div>
             </div>
             <div className={styles.containerThird}>
               <h2 className={styles.informationTitle}>Your Comfort Is Our Priority</h2>

@@ -3,6 +3,7 @@ import 'react-multi-carousel/lib/styles.css';
 import Image from 'next/image';
 import styles from './Slider.module.css'
 import React from 'react'
+import Link from 'next/link';
 
 const responsive = {
     superLargeDesktop: {
@@ -24,25 +25,22 @@ const responsive = {
     }
 }
 
-export default function Slider() {
+export default function Slider({ buildings }) {
+
+    console.log(buildings, '<<<<< dari components');
+
     return (
         <Carousel responsive={responsive}>
-            <div className={styles.imageContainer}>
-                <Image src='/build1.jpg' width={600} height={400} />
-            </div>
-            <div className={styles.imageContainer}>
-                <Image src='/build2.jpg' width={600} height={400} />
-            </div>
-            <div className={styles.imageContainer}>
-                <Image src='/build3.jpg' width={600} height={400} />
-            </div>
-            <div className={styles.imageContainer}>
-                <Image src='/build4.jpeg' width={600} height={400} />
-            </div>
-            <div className={styles.imageContainer}>
-                <Image src='/build5.jpg' width={600} height={400} />
-            </div>
-        </Carousel>
+            {buildings?.map((el, i) => {
+                return (
+                    <Link href={`/buildings/${el.id}`} >
+                        <div className={styles.imageContainer} key={el.id}>
+                            <img src={el.img} alt={el.name} height={400} width={600} />
+                        </div>
+                    </Link>
+                )
+            })}
+        </Carousel >
     )
 }
 

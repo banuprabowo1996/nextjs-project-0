@@ -92,6 +92,11 @@
   color: blue;
 }
 
+.titleBlog {
+  margin-left: 10%;
+}
+
 .blog {
-  text-align: center;
+  margin-left: 10%;
+  text-align: left;
 }

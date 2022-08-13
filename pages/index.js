@@ -9,12 +9,10 @@ export default function Home() {
 
   const [buildings, setBuildings] = useState()
 
-  console.log(buildings, '<<< dari index');
-
   useEffect(() => {
-    fetch(' http://localhost:3001/buildings')
+    fetch('https://jsonplaceholder.typicode.com/photos')
       .then((response) => response.json())
-      .then((data) => setBuildings(data));
+      .then((data) => setBuildings(data.slice(0, 5)));
   }, [])
 
   return (
@@ -38,6 +36,7 @@ export default function Home() {
         <div className={styles.section}>
           {buildings ? <Slider buildings={buildings} /> : null}
         </div>
+
         <div className={styles.section}>
           <div className={styles.sectionThird}>
             <div className={styles.collageImage}>

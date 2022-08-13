@@ -29,14 +29,14 @@ export default function Blog() {
             text-align: center
             }
             `}</style>
-            {dataBlog ? dataBlog.map(el => {
+            {/* {dataBlog ? dataBlog.map(blog => {
                 return (
-                    <div className={styles.blog} key={el.id}>
-                        <p>{el.id}</p>
-                        <p>{el.title}</p>
+                    <div className={styles.blog} key={blog.id}>
+                        <p>{blog.id}</p>
+                        <p>{blog.title}</p>
                     </div>
                 )
-            }) : null}
+            }) : null} */}
             <Footer />
         </>
     )

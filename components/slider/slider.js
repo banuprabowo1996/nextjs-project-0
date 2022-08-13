@@ -33,8 +33,8 @@ export default function Slider({ buildings }) {
         <Carousel responsive={responsive}>
             {buildings?.map((el, i) => {
                 return (
-                    <Link href={`/buildings/${el.id}`} >
-                        <div className={styles.imageContainer} key={el.id}>
+                    <Link href={`/buildings/${el.id}`} key={el.id}>
+                        <div className={styles.imageContainer} >
                             <img src={el.img} alt={el.name} height={400} width={600} />
                         </div>
                     </Link>

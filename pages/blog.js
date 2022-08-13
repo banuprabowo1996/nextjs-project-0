@@ -31,7 +31,7 @@ export default function Blog() {
             `}</style>
             {dataBlog ? dataBlog.map(el => {
                 return (
-                    <div className={styles.blog}>
+                    <div className={styles.blog} key={el.id}>
                         <p>{el.id}</p>
                         <p>{el.title}</p>
                     </div>
